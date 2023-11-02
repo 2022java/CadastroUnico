@@ -23,7 +23,7 @@ public class UsuarioService {
 
 		return listaUsuario;
 	}
-	
+
 	public void inserirUsuario(UsuarioDto usuarioDto){
 		try {
 			Usuario usuario = new Usuario();
@@ -32,6 +32,28 @@ public class UsuarioService {
 			usuario.setEmail(usuarioDto.getEmail());
 			usuario.setIdade(usuarioDto.getIdade());
 			usuarioRepository.save(usuario);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void alterarUsuario(UsuarioDto usuarioDto){
+		try {
+			Usuario usuario = new Usuario();
+			usuario.setId(usuarioDto.getId());
+			usuario.setNome(usuarioDto.getNome());
+			usuario.setSexo(usuarioDto.getSexo());
+			usuario.setEmail(usuarioDto.getEmail());
+			usuario.setIdade(usuarioDto.getIdade());
+			usuarioRepository.save(usuario);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void excluirUsuario(Long id){
+		try {
+			usuarioRepository.deleteById(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
