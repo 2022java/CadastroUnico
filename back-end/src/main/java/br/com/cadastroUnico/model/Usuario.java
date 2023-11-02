@@ -1,4 +1,4 @@
-package br.com.cadastroUnico.model;
+ package br.com.cadastroUnico.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
